@@ -1,9 +1,16 @@
 import React from "react";
 
 import "../stylesheets/App.css";
+import Footer from "./Footer";
 
-function App() {
-  return <div className="App"> HOLA MUNDO</div>;
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
