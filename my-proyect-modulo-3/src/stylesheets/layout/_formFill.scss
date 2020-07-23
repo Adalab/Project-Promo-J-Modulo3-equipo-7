@@ -1,5 +1,8 @@
+@import "../core/variables";
+@import "../core/mixins";
+
 .fill {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: $color-dark-green;
   border-bottom: 1px solid $white-two;
   cursor: pointer;

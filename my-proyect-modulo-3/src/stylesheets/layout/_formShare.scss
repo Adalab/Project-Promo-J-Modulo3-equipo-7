@@ -1,3 +1,6 @@
+@import "../core/variables";
+@import "../core/mixins";
+
 .wrapper {
   margin: 0px 20px 0px 23px;
 
@@ -35,7 +38,7 @@
 }
 
 .tab__text {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: $color-dark-green;
   font-size: 1.125em;
   text-transform: uppercase;
@@ -53,7 +56,7 @@
   text-transform: uppercase;
   border: none;
   border-radius: 12px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-size: 18px;
   font-weight: 600;
   margin: 30px auto;
@@ -107,7 +110,7 @@
 }
 
 .notification {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 600;
   border-top: 1px solid $white-two;
   padding-top: 20px;
