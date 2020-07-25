@@ -13,16 +13,26 @@ import FormFill from "./Page2/FormFill";
 import FormShare from "./Page2/FormShare";
 
 class App extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.getClick = this.getClick.bind(this);
+  // }
+
+  // getClick() {
+  //   console.log("he hecho click");
+  // }
+
   render() {
     return (
       <div className="App">
         <Header />
         <main className="main">
+          <CardPreview />
           <form className="form__section js-form">
-            <CardPreview />
             <FormDesign />
             <FormFill />
             <FormShare />
+            {/* va dentro de FormShare // clickHandler={this.getClick} */}
           </form>
         </main>
 

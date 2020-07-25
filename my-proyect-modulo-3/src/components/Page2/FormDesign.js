@@ -1,8 +1,16 @@
 import React from "react";
+import Palette from "./Palette";
 
 import "../../stylesheets/layout/_formDesign.scss";
 class FormDesign extends React.Component {
   render() {
+    // function getNumber(props) {
+    //   let colorPalette = [];
+
+    //   for (let index = 0; index < 5; index++) {
+    //     const element = array[index];
+    //   }
+    // PREGUNTAR A MARIA}
     return (
       <section className="design wrapper">
         <div className="design__section js-coll">
@@ -24,53 +32,12 @@ class FormDesign extends React.Component {
               <div className="designform__colors">
                 <label for="name">Colores</label>
               </div>
-              <div className="designform__palette1">
-                <input
-                  className="js_palette1"
-                  id="1"
-                  type="radio"
-                  value="palette1"
-                  name="paletteoptions"
-                  checked="checked"
-                />
-              </div>
-              <div className="designform__palette2">
-                <input
-                  className="js_palette2"
-                  id="2"
-                  type="radio"
-                  value="palette2"
-                  name="paletteoptions"
-                />
-              </div>
+              <Palette number="1" />
+              <Palette number="2" />
+              <Palette number="3" />
+              <Palette number="4" />
+              <Palette number="5" />
 
-              <div className="designform__palette3">
-                <input
-                  className="js_palette3"
-                  id="3"
-                  type="radio"
-                  value="palette3"
-                  name="paletteoptions"
-                />
-              </div>
-              <div className="designform__palette4">
-                <input
-                  className="js_palette4"
-                  id="4"
-                  type="radio"
-                  value="palette4"
-                  name="paletteoptions"
-                />
-              </div>
-              <div className="designform__palette5">
-                <input
-                  className="js_palette5"
-                  id="5"
-                  type="radio"
-                  value="palette5"
-                  name="paletteoptions"
-                />
-              </div>
               <div className="designform__color1"></div>
               <div className="designform__color2"></div>
               <div className="designform__color3"></div>
