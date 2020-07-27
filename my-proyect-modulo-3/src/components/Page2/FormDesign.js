@@ -1,16 +1,21 @@
-import React from "react";
-import Palette from "./Palette";
+import React from 'react';
+import Palette from './Palette';
 
-import "../../stylesheets/layout/_formDesign.scss";
+import '../../stylesheets/layout/_formDesign.scss';
+
+const NUMBER_OF_PALLETES = 5;
+
 class FormDesign extends React.Component {
-  render() {
-    // function getNumber(props) {
-    //   let colorPalette = [];
+  getPalettes(numberOfPalletes) {
+    let palettes = [];
+    for (let index = 1; index <= numberOfPalletes; index++) {
+      palettes.push(<Palette number={index} />);
+    }
 
-    //   for (let index = 0; index < 5; index++) {
-    //     const element = array[index];
-    //   }
-    // PREGUNTAR A MARIA}
+    return palettes;
+  }
+
+  render() {
     return (
       <section className="design wrapper">
         <div className="design__section js-coll">
@@ -32,11 +37,8 @@ class FormDesign extends React.Component {
               <div className="designform__colors">
                 <label for="name">Colores</label>
               </div>
-              <Palette number="1" />
-              <Palette number="2" />
-              <Palette number="3" />
-              <Palette number="4" />
-              <Palette number="5" />
+
+              {this.getPalettes(NUMBER_OF_PALLETES)}
 
               <div className="designform__color1"></div>
               <div className="designform__color2"></div>
