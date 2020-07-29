@@ -1,4 +1,5 @@
 import React from "react";
+import FormItem from './FormItem';
 
 import "../../stylesheets/layout/_formFill.scss";
 class FormFill extends React.Component {
@@ -17,28 +18,8 @@ class FormFill extends React.Component {
         </div>
         <div className="form content js-contentFill js-collapsable">
           <fieldset>
-            <div className="form__name">
-              <label for="name">Nombre completo</label>
-              <input
-                className="input__name js-input-name"
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Ej: Leela Turanga"
-                required
-              />
-            </div>
-            <div className="form__job">
-              <label for="job">Puesto</label>
-              <input
-                className="input__job js-input-job"
-                type="text"
-                id="job"
-                name="job"
-                placeholder="Ej: Front End developer"
-                required
-              />
-            </div>
+            <FormItem name={'name'} title={'Nombre completo'} placeholder={'Ej: Leela Turanga'}/>
+            <FormItem name={'job'} title={'Puesto'} placeholder={'Ej: Front End developer'}/>
             <div className="form__img">
               <label for="img">Imagen de perfil</label>
               <div className="form__img--box">
@@ -59,48 +40,10 @@ class FormFill extends React.Component {
             </div>
           </fieldset>
           <fieldset>
-            <div className="form__email">
-              <label for="email">Email</label>
-              <input
-                className="input__email js-input-email"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Ej: leela@planet-express.com"
-                required
-              />
-            </div>
-            <div className="form__phone">
-              <label for="phone">Teléfono</label>
-              <input
-                className="input__phone js-input-phone"
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Ej: 555 2587695"
-                pattern="[0-9]{9}"
-              />
-            </div>
-            <div className="form__linkedin">
-              <label for="Linkedin">Linkedin</label>
-              <input
-                className="input__linkedin js-input-linkedin"
-                type="text"
-                id="linkedin"
-                name="linkedin"
-                placeholder="Ej: Leela"
-              />
-            </div>
-            <div className="form__github">
-              <label for="github">Github</label>
-              <input
-                className="input__github js-input-github"
-                type="text"
-                id="github"
-                name="github"
-                placeholder="Ej: leelaturanga"
-              />
-            </div>
+          <FormItem name={'email'} title={'Email'} placeholder={'Ej: leela@planet-express.com'}/>
+          <FormItem name={'phone'} title={'Teléfono'} placeholder={'Ej: 555 2587695'}/> 
+          <FormItem name={'linkedin'} title={'Linkedin'} placeholder={'Ej: Leela'}/> 
+          <FormItem name={'github'} title={'Github'} placeholder={'Ej: leelaturanga'}/> 
           </fieldset>
         </div>
       </section>
