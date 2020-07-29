@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import FormItem from './FormItem';
 
-import "../../stylesheets/layout/_formFill.scss";
+import '../../stylesheets/layout/_formFill.scss';
 class FormFill extends React.Component {
   render() {
     return (
@@ -18,10 +18,18 @@ class FormFill extends React.Component {
         </div>
         <div className="form content js-contentFill js-collapsable">
           <fieldset>
-            <FormItem name={'name'} title={'Nombre completo'} placeholder={'Ej: Leela Turanga'}/>
-            <FormItem name={'job'} title={'Puesto'} placeholder={'Ej: Front End developer'}/>
+            <FormItem
+              name={'name'}
+              title={'Nombre completo'}
+              placeholder={'Ej: Leela Turanga'}
+            />
+            <FormItem
+              name={'job'}
+              title={'Puesto'}
+              placeholder={'Ej: Front End developer'}
+            />
             <div className="form__img">
-              <label for="img">Imagen de perfil</label>
+              <label htmlFor="img">Imagen de perfil</label>
               <div className="form__img--box">
                 <buttonxfbi
                   className="form__img--box--button js__profile-trigger"
@@ -40,10 +48,26 @@ class FormFill extends React.Component {
             </div>
           </fieldset>
           <fieldset>
-          <FormItem name={'email'} title={'Email'} placeholder={'Ej: leela@planet-express.com'}/>
-          <FormItem name={'phone'} title={'Teléfono'} placeholder={'Ej: 555 2587695'}/> 
-          <FormItem name={'linkedin'} title={'Linkedin'} placeholder={'Ej: Leela'}/> 
-          <FormItem name={'github'} title={'Github'} placeholder={'Ej: leelaturanga'}/> 
+            <FormItem
+              name={'email'}
+              title={'Email'}
+              placeholder={'Ej: leela@planet-express.com'}
+            />
+            <FormItem
+              name={'phone'}
+              title={'Teléfono'}
+              placeholder={'Ej: 555 2587695'}
+            />
+            <FormItem
+              name={'linkedin'}
+              title={'Linkedin'}
+              placeholder={'Ej: Leela'}
+            />
+            <FormItem
+              name={'github'}
+              title={'Github'}
+              placeholder={'Ej: leelaturanga'}
+            />
           </fieldset>
         </div>
       </section>

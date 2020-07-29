@@ -35,7 +35,7 @@ class FormDesign extends React.Component {
           <fieldset>
             <div className="designform__palette">
               <div className="designform__colors">
-                <label for="name">Colores</label>
+                <label htmlFor="name">Colores</label>
               </div>
 
               {this.getPalettes(NUMBER_OF_PALLETES)}
