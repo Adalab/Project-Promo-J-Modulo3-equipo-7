@@ -7,8 +7,8 @@ class FormItem extends React.Component {
   }
 
   handleChange(ev) {
-    let info = ev.target.value;
-    this.props.inputValue();
+    //let info = ev.target.value;
+    this.props.inputValue(ev.target.name, ev.target.value);
   }
 
   render() {
@@ -22,6 +22,7 @@ class FormItem extends React.Component {
           name={this.props.name}
           placeholder={this.props.placeholder}
           onChange={this.handleChange}
+          value={this.props.value}
           required
         />
       </div>

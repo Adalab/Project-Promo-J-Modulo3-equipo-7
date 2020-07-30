@@ -29,14 +29,23 @@ class App extends React.Component {
     this.handleInputValue = this.handleInputValue.bind(this);
   }
 
-  // handleInputValue(element) {
-  //   this.setState({ userInfo[element.target.name]: element.target.value });
-  //   console.log(element.name, element.value);
-  // }
+  handleInputValue(inputName, inputValue) {
+    //this.setState({ userInfo[element.target.name]: element.target.value });
+    this.setState((prevState) => {
+      return {
+        userInfo: {
+          ...prevState.userInfo,
+          [inputName]: inputValue,
+        },
+      };
+    });
 
-  // getClick() {
-  //   console.log("he hecho click");
-  // }
+    console.log(this.state.userInfo);
+  }
+
+  getClick() {
+    console.log('he hecho click');
+  }
 
   render() {
     return (
@@ -46,7 +55,7 @@ class App extends React.Component {
           <CardPreview />
           <form className="form__section js-form">
             <FormDesign />
-            <FormFill inputValue={this.handleInputValue()} />
+            <FormFill inputValue={this.handleInputValue} />
             <FormShare />
             {/* va dentro de FormShare // clickHandler={this.getClick} */}
           </form>

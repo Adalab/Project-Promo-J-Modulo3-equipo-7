@@ -19,9 +19,11 @@ class FormFill extends React.Component {
         <div className="form content js-contentFill js-collapsable">
           <fieldset>
             <FormItem
-              name={'name'}
+              name="name"
+              value={this.props.name}
               title={'Nombre completo'}
               placeholder={'Ej: Leela Turanga'}
+              inputValue={this.props.inputValue}
             />
             <FormItem
               name={'job'}
