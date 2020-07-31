@@ -1,7 +1,7 @@
-import React from 'react';
-import FormItem from './FormItem';
+import React from "react";
+import FormItem from "./FormItem";
 
-import '../../stylesheets/layout/_formFill.scss';
+import "../../stylesheets/layout/_formFill.scss";
 class FormFill extends React.Component {
   render() {
     return (
@@ -19,16 +19,18 @@ class FormFill extends React.Component {
         <div className="form content js-contentFill js-collapsable">
           <fieldset>
             <FormItem
-              name="name"
+              name={"name"}
               value={this.props.name}
-              title={'Nombre completo'}
-              placeholder={'Ej: Leela Turanga'}
+              title={"Nombre completo"}
+              placeholder={"Ej: Leela Turanga"}
               inputValue={this.props.inputValue}
             />
             <FormItem
-              name={'job'}
-              title={'Puesto'}
-              placeholder={'Ej: Front End developer'}
+              name={"job"}
+              value={this.props.job}
+              title={"Puesto"}
+              placeholder={"Ej: Front End developer"}
+              inputValue={this.props.inputValue}
             />
             <div className="form__img">
               <label htmlFor="img">Imagen de perfil</label>
@@ -51,24 +53,32 @@ class FormFill extends React.Component {
           </fieldset>
           <fieldset>
             <FormItem
-              name={'email'}
-              title={'Email'}
-              placeholder={'Ej: leela@planet-express.com'}
+              name={"email"}
+              value={this.props.email}
+              title={"Email"}
+              placeholder={"Ej: leela@planet-express.com"}
+              inputValue={this.props.inputValue}
             />
             <FormItem
-              name={'phone'}
-              title={'Teléfono'}
-              placeholder={'Ej: 555 2587695'}
+              name={"phone"}
+              value={this.props.phone}
+              title={"Teléfono"}
+              placeholder={"Ej: 555 2587695"}
+              inputValue={this.props.inputValue}
             />
             <FormItem
-              name={'linkedin'}
-              title={'Linkedin'}
-              placeholder={'Ej: Leela'}
+              name={"linkedin"}
+              value={this.props.linkedin}
+              title={"Linkedin"}
+              placeholder={"Ej: Leela"}
+              inputValue={this.props.inputValue}
             />
             <FormItem
-              name={'github'}
-              title={'Github'}
-              placeholder={'Ej: leelaturanga'}
+              name={"github"}
+              value={this.props.github}
+              title={"Github"}
+              placeholder={"Ej: leelaturanga"}
+              inputValue={this.props.inputValue}
             />
           </fieldset>
         </div>
