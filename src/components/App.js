@@ -29,11 +29,6 @@ class App extends React.Component {
     this.handleInputValue = this.handleInputValue.bind(this);
   }
 
-  // handleInputValue(element) {
-  //   this.setState({ userInfo[element.target.name]: element.target.value });
-  //   console.log(element.name, element.value);
-  // }
-
   // getClick() {
   //   console.log("he hecho click");
   // }
