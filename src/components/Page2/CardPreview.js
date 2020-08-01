@@ -13,10 +13,10 @@ class CardPreview extends React.Component {
           <div className="cardPreview__card">
             <div className="cardPreview__info js-border-box js_palette1_border_box">
               <h1 className="cardPreview__name js-name js_palette1_color">
-                Nombre Apellido
+                {this.props.name === "" ? "Leela Turanga" : this.props.name}
               </h1>
               <h2 className="cardPreview__position js-job">
-                Front-End developer
+                {this.props.job === "" ? "Front End Developer" : this.props.job}
               </h2>
             </div>
             <div className="cardPreview__profileImage js__profile-image">
@@ -26,6 +26,7 @@ class CardPreview extends React.Component {
               <div className="cardPreview__socialMediaContainer js-icon-container jscontainer-email js_palette1_border_color hidden-icon">
                 <a className="js-email" href="#">
                   <i className="fas fa-envelope js-icon js_palette1_color"></i>
+                  {this.props.email === "" ? "" : this.props.email}
                 </a>
               </div>
               <div className="cardPreview__socialMediaContainer js-icon-container jscontainer-phone js_palette1_border_color hidden-icon">
