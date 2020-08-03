@@ -3,6 +3,17 @@ import FormItem from "./FormItem";
 
 import "../../stylesheets/layout/_formFill.scss";
 class FormFill extends React.Component {
+  constructor(props){
+    super(props)
+    this.fileInput=React.createRef();
+    this.handleChange=this.handleChange.bind(this);
+  }
+
+  handleChange(event){
+    const newFileReader=new FileReader()
+    newFileReader.readAsDataURL()
+
+  }
   render() {
     return (
       <section className="fill wrapper">
@@ -42,6 +53,8 @@ class FormFill extends React.Component {
                   Añadir imagen
                 </buttonxfbi>
                 <input
+                  onChange={this.handleChange}
+                  ref={this.fileInput}
                   className="form__img--box--check action__hiddenField js__profile-upload-btn"
                   id="imgOption"
                   type="file"
