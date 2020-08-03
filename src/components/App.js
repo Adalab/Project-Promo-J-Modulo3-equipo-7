@@ -17,7 +17,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       userInfo: {
-        palette: 1,
+        palette: "",
         name: "",
         job: "",
         phone: "",
@@ -60,7 +60,10 @@ class App extends React.Component {
             github={this.state.userInfo.github}
           />
           <form className="form__section js-form">
-            <FormDesign />
+            <FormDesign
+              handleInputValue={this.handleInputValue}
+              checked={this.state.userInfo.palette}
+            />
             <FormFill
               name={this.state.userInfo.name}
               job={this.state.userInfo.job}

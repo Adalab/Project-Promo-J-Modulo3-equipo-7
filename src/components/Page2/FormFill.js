@@ -70,7 +70,7 @@ class FormFill extends React.Component {
               name={"linkedin"}
               value={this.props.linkedin}
               title={"Linkedin"}
-              placeholder={"Ej: Leela"}
+              placeholder={"Ej: Leela-Turanga"}
               inputValue={this.props.inputValue}
             />
             <FormItem
