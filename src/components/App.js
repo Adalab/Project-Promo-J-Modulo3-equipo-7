@@ -7,7 +7,6 @@ import Footer from './Footer';
 // import Landing from "./Landing/Landing";
 import Header from './Header';
 import CardPreview from './Page2/CardPreview';
-
 import FormDesign from './Page2/FormDesign';
 import FormFill from './Page2/FormFill';
 import FormShare from './Page2/FormShare';
@@ -20,6 +19,7 @@ class App extends React.Component {
         palette: '',
         name: '',
         job: '',
+        photo: '',
         phone: '',
         email: '',
         linkedin: '',
@@ -27,6 +27,7 @@ class App extends React.Component {
       },
     };
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
 
   handleInputValue(inputName, inputValue) {
@@ -45,8 +46,16 @@ class App extends React.Component {
     ); // estabamos haciendo el console log nel lugar incorrecto, funcionaba.
   }
 
-  getClick() {
-    console.log('he hecho click');
+  updateAvatar(image) {
+    this.setState(
+      (prevState) => {
+        const newUserInfo = { ...this.state.userInfo, photo: image };
+        return newUserInfo;
+      },
+      () => {
+        console.log(this.state.userInfo);
+      }
+    );
   }
 
   render() {
@@ -76,6 +85,7 @@ class App extends React.Component {
               linkedin={this.state.userInfo.linkedin}
               github={this.state.userInfo.github}
               inputValue={this.handleInputValue}
+              updateAvatar={this.updateAvatar}
             />
             <FormShare />
             {/* va dentro de FormShare // clickHandler={this.getClick} */}

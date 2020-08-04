@@ -1,19 +1,32 @@
-import React from "react";
-import FormItem from "./FormItem";
+import React from 'react';
+import FormItem from './FormItem';
 
-import "../../stylesheets/layout/_formFill.scss";
+import '../../stylesheets/layout/_formFill.scss';
 class FormFill extends React.Component {
-  constructor(props){
-    super(props)
-    this.fileInput=React.createRef();
-    this.handleChange=this.handleChange.bind(this);
+  constructor(props) {
+    super(props);
+    this.fr = new FileReader();
+    this.fileInput = React.createRef();
+    this.handleChange = this.handleChange.bind(this);
+    this.loadProfileImage = this.loadProfileImage.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
-  handleChange(event){
-    const newFileReader=new FileReader()
-    newFileReader.readAsDataURL()
-
+  handleFile() {
+    this.fileInput.current.click();
   }
+
+  handleChange(event) {
+    const newFileReader = event.currentTarget.files[0];
+    this.fr.addEventListener('load', this.loadProfileImage);
+    this.fr.readAsDataURL(newFileReader);
+  }
+
+  loadProfileImage() {
+    const image = this.fr.result;
+    this.props.updateAvatar(image);
+  }
+
   render() {
     return (
       <section className="fill wrapper">
@@ -30,35 +43,36 @@ class FormFill extends React.Component {
         <div className="form content js-contentFill js-collapsable">
           <fieldset>
             <FormItem
-              name={"name"}
+              name={'name'}
               value={this.props.name}
-              title={"Nombre completo"}
-              placeholder={"Ej: Leela Turanga"}
+              title={'Nombre completo'}
+              placeholder={'Ej: Leela Turanga'}
               inputValue={this.props.inputValue}
             />
             <FormItem
-              name={"job"}
+              name={'job'}
               value={this.props.job}
-              title={"Puesto"}
-              placeholder={"Ej: Front End developer"}
+              title={'Puesto'}
+              placeholder={'Ej: Front End developer'}
               inputValue={this.props.inputValue}
             />
             <div className="form__img">
               <label htmlFor="img">Imagen de perfil</label>
               <div className="form__img--box">
-                <buttonxfbi
+                <button
                   className="form__img--box--button js__profile-trigger"
                   type="button"
+                  onClick={this.handleFile}
                 >
                   Añadir imagen
-                </buttonxfbi>
+                </button>
                 <input
                   onChange={this.handleChange}
                   ref={this.fileInput}
                   className="form__img--box--check action__hiddenField js__profile-upload-btn"
-                  id="imgOption"
+                  id="photo"
                   type="file"
-                  name="imgOptions"
+                  name="photo"
                 />
                 <div className="form__img--box--preview profile__preview js__profile-preview"></div>
               </div>
@@ -66,31 +80,31 @@ class FormFill extends React.Component {
           </fieldset>
           <fieldset>
             <FormItem
-              name={"email"}
+              name={'email'}
               value={this.props.email}
-              title={"Email"}
-              placeholder={"Ej: leela@planet-express.com"}
+              title={'Email'}
+              placeholder={'Ej: leela@planet-express.com'}
               inputValue={this.props.inputValue}
             />
             <FormItem
-              name={"phone"}
+              name={'phone'}
               value={this.props.phone}
-              title={"Teléfono"}
-              placeholder={"Ej: 555 2587695"}
+              title={'Teléfono'}
+              placeholder={'Ej: 555 2587695'}
               inputValue={this.props.inputValue}
             />
             <FormItem
-              name={"linkedin"}
+              name={'linkedin'}
               value={this.props.linkedin}
-              title={"Linkedin"}
-              placeholder={"Ej: Leela-Turanga"}
+              title={'Linkedin'}
+              placeholder={'Ej: Leela-Turanga'}
               inputValue={this.props.inputValue}
             />
             <FormItem
-              name={"github"}
+              name={'github'}
               value={this.props.github}
-              title={"Github"}
-              placeholder={"Ej: leelaturanga"}
+              title={'Github'}
+              placeholder={'Ej: leelaturanga'}
               inputValue={this.props.inputValue}
             />
           </fieldset>
