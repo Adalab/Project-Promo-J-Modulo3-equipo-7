@@ -1,7 +1,7 @@
-import React from "react";
-import Palette from "./Palette";
+import React from 'react';
+import Palette from './Palette';
 
-import "../../stylesheets/layout/_formDesign.scss";
+import '../../stylesheets/layout/_formDesign.scss';
 
 const NUMBER_OF_PALLETES = 5;
 
@@ -14,7 +14,7 @@ class FormDesign extends React.Component {
           number={index}
           key={index}
           handleInputValue={this.props.handleInputValue}
-          checked={this.props.checked === { index } ? true : false}
+          checked={this.props.checked == index ? true : false}
         />
       );
     }

@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import "../../stylesheets/layout/_cardPreview.scss";
+import '../../stylesheets/layout/_cardPreview.scss';
 class CardPreview extends React.Component {
   render() {
-    const isEmail = this.props.email ? "" : "hidden-icon";
-    const isPhone = this.props.phone ? "" : "hidden-icon";
-    const isLinkedin = this.props.linkedin ? "" : "hidden-icon";
-    const isGithub = this.props.github ? "" : "hidden-icon";
+    const isEmail = this.props.email ? '' : 'hidden-icon';
+    const isPhone = this.props.phone ? '' : 'hidden-icon';
+    const isLinkedin = this.props.linkedin ? '' : 'hidden-icon';
+    const isGithub = this.props.github ? '' : 'hidden-icon';
     return (
       <section className="cardPreview">
         <div>
@@ -17,14 +17,14 @@ class CardPreview extends React.Component {
           <div className="cardPreview__card">
             <div className="cardPreview__info js-border-box js_palette1_border_box">
               <h1 className="cardPreview__name js-name js_palette1_color">
-                {this.props.name === "" ? "Leela Turanga" : this.props.name}
+                {this.props.name === '' ? 'Leela Turanga' : this.props.name}
               </h1>
               <h2 className="cardPreview__position js-job">
-                {this.props.job === "" ? "Front End Developer" : this.props.job}
+                {this.props.job === '' ? 'Front End Developer' : this.props.job}
               </h2>
             </div>
             <div className="cardPreview__profileImage js__profile-image">
-              <img />
+              <img alt="" />
             </div>
             <div className="cardPreview__socialMedia js-icon-container js_palette1_border_color">
               <div

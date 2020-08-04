@@ -1,32 +1,34 @@
-import React from "react";
+import React from 'react';
 
-import "../stylesheets/_app.scss";
+import '../stylesheets/_app.scss';
 
-import "../stylesheets/layout/_page.scss";
-import Footer from "./Footer";
+import '../stylesheets/layout/_page.scss';
+import Footer from './Footer';
 // import Landing from "./Landing/Landing";
-import Header from "./Header";
-import CardPreview from "./Page2/CardPreview";
+import Header from './Header';
+import CardPreview from './Page2/CardPreview';
 
-import FormDesign from "./Page2/FormDesign";
-import FormFill from "./Page2/FormFill";
-import FormShare from "./Page2/FormShare";
+import FormDesign from './Page2/FormDesign';
+import FormFill from './Page2/FormFill';
+import FormShare from './Page2/FormShare';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       userInfo: {
-        palette: "",
-        name: "",
-        job: "",
-        phone: "",
-        email: "",
-        linkedin: "",
-        github: "",
+        palette: '',
+        name: '',
+        job: '',
+        phone: '',
+        email: '',
+        linkedin: '',
+        github: '',
+        photo: '',
       },
     };
     this.handleInputValue = this.handleInputValue.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
 
   handleInputValue(inputName, inputValue) {
@@ -42,8 +44,17 @@ class App extends React.Component {
     console.log(this.state.userInfo);
   }
 
+  updateAvatar(img) {
+    this.setState((prevState) => {
+      const newProfile = { ...prevState.userInfo, photo: img };
+      return {
+        photo: newProfile,
+      };
+    });
+  }
+
   getClick() {
-    console.log("he hecho click");
+    console.log('he hecho click');
   }
 
   render() {
@@ -61,8 +72,8 @@ class App extends React.Component {
           />
           <form className="form__section js-form">
             <FormDesign
-              handleInputValue={this.handleInputValue}
               checked={this.state.userInfo.palette}
+              handleInputValue={this.handleInputValue}
             />
             <FormFill
               name={this.state.userInfo.name}
@@ -72,6 +83,7 @@ class App extends React.Component {
               linkedin={this.state.userInfo.linkedin}
               github={this.state.userInfo.github}
               inputValue={this.handleInputValue}
+              updateAvatar={this.updateAvatar}
             />
             <FormShare />
             {/* va dentro de FormShare // clickHandler={this.getClick} */}
