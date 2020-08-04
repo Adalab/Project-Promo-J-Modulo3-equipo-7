@@ -14,7 +14,7 @@ class FormDesign extends React.Component {
           number={index}
           key={index}
           handleInputValue={this.props.handleInputValue}
-          checked={this.props.checked == index ? true : false}
+          checked={parseInt(this.props.checked) === index ? true : false} //se recibia el palette index como string, solo necesitaba el parseInt
         />
       );
     }

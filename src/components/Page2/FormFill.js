@@ -13,7 +13,7 @@ class FormFill extends React.Component {
     const newFileReader = new FileReader();
     newFileReader.readAsDataURL(this.fileInput.current.files[0]);
     newFileReader.addEventListener('load', (event) => {
-      const image = event.target.result;
+      const image = this.target.result;
       this.props.updateAvatar(image);
     });
   }

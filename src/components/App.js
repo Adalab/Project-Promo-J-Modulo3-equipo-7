@@ -39,9 +39,9 @@ class App extends React.Component {
           [inputName]: inputValue,
         },
       };
-    });
+    }, () => {console.log(this.state.userInfo);}); // estabamos haciendo el console log nel lugar incorrecto, funcionaba.
 
-    console.log(this.state.userInfo);
+    
   }
 
   updateAvatar(img) {
