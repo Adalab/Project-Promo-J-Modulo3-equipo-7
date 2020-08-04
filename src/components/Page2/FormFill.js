@@ -5,18 +5,28 @@ import '../../stylesheets/layout/_formFill.scss';
 class FormFill extends React.Component {
   constructor(props) {
     super(props);
+    this.fr = new FileReader();
     this.fileInput = React.createRef();
     this.handleChange = this.handleChange.bind(this);
+    this.loadProfileImage = this.loadProfileImage.bind(this);
+    this.handleFile = this.handleFile.bind(this);
+  }
+
+  handleFile() {
+    this.fileInput.current.click();
   }
 
   handleChange(event) {
-    const newFileReader = new FileReader();
-    newFileReader.readAsDataURL(this.fileInput.current.files[0]);
-    newFileReader.addEventListener('load', (event) => {
-      const image = this.target.result;
-      this.props.updateAvatar(image);
-    });
+    const newFileReader = event.currentTarget.files[0];
+    this.fr.addEventListener('load', this.loadProfileImage);
+    this.fr.readAsDataURL(newFileReader);
   }
+
+  loadProfileImage() {
+    const image = this.fr.result;
+    this.props.updateAvatar(image);
+  }
+
   render() {
     return (
       <section className="fill wrapper">
@@ -52,6 +62,7 @@ class FormFill extends React.Component {
                 <button
                   className="form__img--box--button js__profile-trigger"
                   type="button"
+                  onClick={this.handleFile}
                 >
                   Añadir imagen
                 </button>
@@ -59,7 +70,7 @@ class FormFill extends React.Component {
                   onChange={this.handleChange}
                   ref={this.fileInput}
                   className="form__img--box--check action__hiddenField js__profile-upload-btn"
-                  id="imgOption"
+                  id="photo"
                   type="file"
                   name="photo"
                 />

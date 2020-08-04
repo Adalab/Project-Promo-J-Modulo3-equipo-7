@@ -7,7 +7,6 @@ import Footer from './Footer';
 // import Landing from "./Landing/Landing";
 import Header from './Header';
 import CardPreview from './Page2/CardPreview';
-
 import FormDesign from './Page2/FormDesign';
 import FormFill from './Page2/FormFill';
 import FormShare from './Page2/FormShare';
@@ -20,11 +19,11 @@ class App extends React.Component {
         palette: '',
         name: '',
         job: '',
+        photo: '',
         phone: '',
         email: '',
         linkedin: '',
         github: '',
-        photo: '',
       },
     };
     this.handleInputValue = this.handleInputValue.bind(this);
@@ -32,29 +31,31 @@ class App extends React.Component {
   }
 
   handleInputValue(inputName, inputValue) {
-    this.setState((prevState) => {
-      return {
-        userInfo: {
-          ...prevState.userInfo,
-          [inputName]: inputValue,
-        },
-      };
-    }, () => {console.log(this.state.userInfo);}); // estabamos haciendo el console log nel lugar incorrecto, funcionaba.
-
-    
+    this.setState(
+      (prevState) => {
+        return {
+          userInfo: {
+            ...prevState.userInfo,
+            [inputName]: inputValue,
+          },
+        };
+      },
+      () => {
+        console.log(this.state.userInfo);
+      }
+    ); // estabamos haciendo el console log nel lugar incorrecto, funcionaba.
   }
 
-  updateAvatar(img) {
-    this.setState((prevState) => {
-      const newProfile = { ...prevState.userInfo, photo: img };
-      return {
-        photo: newProfile,
-      };
-    });
-  }
-
-  getClick() {
-    console.log('he hecho click');
+  updateAvatar(image) {
+    this.setState(
+      (prevState) => {
+        const newUserInfo = { ...this.state.userInfo, photo: image };
+        return newUserInfo;
+      },
+      () => {
+        console.log(this.state.userInfo);
+      }
+    );
   }
 
   render() {
@@ -69,6 +70,7 @@ class App extends React.Component {
             email={this.state.userInfo.email}
             linkedin={this.state.userInfo.linkedin}
             github={this.state.userInfo.github}
+            colorPalette={this.state.userInfo.palette}
           />
           <form className="form__section js-form">
             <FormDesign
