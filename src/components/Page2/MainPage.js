@@ -38,6 +38,7 @@ class MainPage extends React.Component {
     this.updateAvatar = this.updateAvatar.bind(this);
     this.getCardData = this.getCardData.bind(this);
     this.setURL = this.setURL.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
 
   handleInputValue(inputName, inputValue) {
@@ -66,6 +67,23 @@ class MainPage extends React.Component {
         console.log(this.state.userInfo);
       }
     );
+  }
+
+  resetForm() {
+    this.setState({
+      userInfo: {
+        palette: '',
+        name: '',
+        job: '',
+        photo: '',
+        phone: '',
+        email: '',
+        linkedin: '',
+        github: '',
+      },
+      cardURL:
+        'En este momento el link no está disponible. Por favor, revisa los campos del formulario arriba indicados 🤖',
+    });
   }
   getCardData() {
     const userInfoData = this.state.userInfo;
@@ -107,6 +125,7 @@ class MainPage extends React.Component {
             github={this.state.userInfo.github}
             colorPalette={this.state.userInfo.palette}
             photoPreview={this.state.userInfo.photo}
+            resetForm={this.resetForm}
           />
           <form className="form__section js-form">
             <FormDesign

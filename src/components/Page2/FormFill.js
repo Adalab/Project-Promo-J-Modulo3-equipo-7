@@ -34,13 +34,13 @@ class FormFill extends React.Component {
 
   render() {
     return (
-      <section
-        onClick={this.getPanelClicked}
-        id="panel-2"
-        className="fill wrapper"
-      >
+      <section className="fill wrapper">
         <div className="fill__section js-coll">
-          <div className="fill__section--box">
+          <div
+            onClick={this.getPanelClicked}
+            id="panel-2"
+            className="fill__section--box"
+          >
             <i
               className="fa fa-keyboard-o fill__section--img"
               aria-hidden="true"

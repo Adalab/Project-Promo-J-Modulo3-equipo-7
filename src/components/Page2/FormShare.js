@@ -24,13 +24,13 @@ class FormShare extends React.Component {
   render() {
     const openShare = this.state.active !== true ? 'content' : '';
     return (
-      <section
-        onClick={this.getPanelClicked}
-        id="panel-3"
-        className="share wrapper"
-      >
+      <section className="share wrapper">
         <div className="share__tab js-coll">
-          <div className="share__tab--description">
+          <div
+            onClick={this.getPanelClicked}
+            id="panel-3"
+            className="share__tab--description"
+          >
             <i className="fas fa-share-alt tab__image"></i>
             <h2 className="tab__text">Comparte</h2>
           </div>

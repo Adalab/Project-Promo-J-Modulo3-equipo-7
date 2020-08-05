@@ -27,7 +27,10 @@ class CardPreview extends React.Component {
     return (
       <section className="cardPreview">
         <div>
-          <button className="cardPreview__clearButton js-clear-button">
+          <button
+            onClick={this.props.resetForm}
+            className="cardPreview__clearButton js-clear-button"
+          >
             <i className="far fa-trash-alt"></i>
             RESET
           </button>
