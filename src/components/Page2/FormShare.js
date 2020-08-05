@@ -2,14 +2,15 @@ import React from "react";
 
 import "../../stylesheets/layout/_formShare.scss";
 class FormShare extends React.Component {
-  //   constructor(props) {
-  //     super(props);
-  //     this.getClickChild = this.getClickChild.bind(this);
-  //   }
+  constructor(props) {
+    super(props);
+    this.getClick = this.getClick.bind(this);
+  }
 
-  //   getClickChild() {
-  //     this.props.clickHandler(evt.target);
-  //   }
+  getClick(event) {
+    event.preventDefault();
+    this.props.clickHandler(event.target);
+  }
 
   render() {
     return (
@@ -26,7 +27,7 @@ class FormShare extends React.Component {
             <button
               type="submit"
               className="createcard__button js-createcard__button"
-              // onClick={this.getClickChild}
+              onClick={this.getClick}
             >
               <div className="createcard__button--icon">
                 <i className="far fa-address-card"></i>

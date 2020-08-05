@@ -1,33 +1,37 @@
-import React from 'react';
+import React from "react";
 
-import '../stylesheets/_app.scss';
+import "../stylesheets/_app.scss";
 
-import '../stylesheets/layout/_page.scss';
-import Footer from './Footer';
+import "../stylesheets/layout/_page.scss";
+import Footer from "./Footer";
 // import Landing from "./Landing/Landing";
-import Header from './Header';
-import CardPreview from './Page2/CardPreview';
-import FormDesign from './Page2/FormDesign';
-import FormFill from './Page2/FormFill';
-import FormShare from './Page2/FormShare';
+import Header from "./Header";
+import CardPreview from "./Page2/CardPreview";
+import FormDesign from "./Page2/FormDesign";
+import FormFill from "./Page2/FormFill";
+import FormShare from "./Page2/FormShare";
+import { cardSearch } from "../services/CardSearch";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       userInfo: {
-        palette: '',
-        name: '',
-        job: '',
-        photo: '',
-        phone: '',
-        email: '',
-        linkedin: '',
-        github: '',
+        palette: "",
+        name: "",
+        job: "",
+        photo: "",
+        phone: "",
+        email: "",
+        linkedin: "",
+        github: "",
       },
+      cardURL: "",
     };
     this.handleInputValue = this.handleInputValue.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.getCardData = this.getCardData.bind(this);
+    this.setURL = this.setURL.bind(this);
   }
 
   handleInputValue(inputName, inputValue) {
@@ -57,7 +61,20 @@ class App extends React.Component {
       }
     );
   }
-
+  getCardData() {
+    debugger;
+    const userInfoData = this.state.userInfo;
+    cardSearch(userInfoData)
+      .then((result) => this.setURL(result))
+      .catch((error) => console.log(error));
+  }
+  setURL(result) {
+    if (result.success) {
+      this.setState({ cardURL: result.cardURL });
+    } else {
+      this.setState({ cardURL: "error:" + result.error });
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -89,8 +106,7 @@ class App extends React.Component {
               inputValue={this.handleInputValue}
               updateAvatar={this.updateAvatar}
             />
-            <FormShare />
-            {/* va dentro de FormShare // clickHandler={this.getClick} */}
+            <FormShare clickHandler={this.getCardData} />
           </form>
         </main>
 
