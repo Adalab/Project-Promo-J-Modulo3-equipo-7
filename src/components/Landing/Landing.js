@@ -1,16 +1,21 @@
-import React from "react";
-import LogoCard from "../../images/logo-awesome-profile-cards.svg";
-import LogoTeam from "../../images/futuramasdelcode.png";
-import "../../stylesheets/layout/_landing.scss";
-import Footer from "../Footer";
+import React from 'react';
+import LogoCard from '../../images/logo-awesome-profile-cards.svg';
+import LogoTeam from '../../images/futuramasdelcode.png';
+import '../../stylesheets/layout/_landing.scss';
+import { Link } from 'react-router-dom';
+import Footer from '../Footer';
 class Landing extends React.Component {
   render() {
     return (
       <div>
-        {" "}
+        {' '}
         <main className="hero">
-          <img className="img-main-hero" src={LogoCard} />
-          <img className="img-main-hero-futuramas" src={LogoTeam} />
+          <img className="img-main-hero" src={LogoCard} alt="Futurama Logo" />
+          <img
+            className="img-main-hero-futuramas"
+            src={LogoTeam}
+            alt="Logo Team"
+          />
           <article className="main-text">
             <h1 className="main-text-title">Crea tu tarjeta de visita</h1>
             <p className="main-text-paragraph">
@@ -32,7 +37,9 @@ class Landing extends React.Component {
             </div>
           </section>
           <a href="./cards-menu.html">
-            <div className="start-button">comenzar</div>
+            <div className="start-button">
+              <Link to="/awesome-profile-card">comenzar </Link>
+            </div>
           </a>
         </main>
         <Footer />

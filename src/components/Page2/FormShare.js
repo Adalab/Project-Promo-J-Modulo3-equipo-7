@@ -36,9 +36,11 @@ class FormShare extends React.Component {
             </button>
             <section className="notification wrapper content js-share__section">
               <p>La tarjeta ha sido creada:</p>
-              <p className="response__url js-apiLink">
-                https://awesome-profile-card.com?id=A456DF0001
-              </p>
+              {/*he creado un link en lugar de un p para que pueda pinchar en el link recibe por props la url que le llega desde la API */}
+              <a target="_blank" className="response__url js-apiLink"
+                href={this.props.cardLink}>
+                  {this.props.cardLink}
+              </a>
               <a className="share__button js-share__button">
                 <div className="share__button">
                   <div className="share__button--icon">

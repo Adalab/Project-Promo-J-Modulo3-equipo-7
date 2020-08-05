@@ -6,6 +6,11 @@ import '../../stylesheets/layout/_formDesign.scss';
 const NUMBER_OF_PALLETES = 5;
 
 class FormDesign extends React.Component {
+  constructor(props) {
+    super(props);
+    this.getPanelClicked = this.getPanelClicked.bind(this);
+  }
+
   getPalettes(numberOfPalletes) {
     let palettes = [];
     for (let index = 1; index <= numberOfPalletes; index++) {
@@ -22,9 +27,15 @@ class FormDesign extends React.Component {
     return palettes;
   }
 
+  //la función que recogerá el id del panel sobre el que he hecho click
+  //y se lo manda al padre para que setee el estado de activePanel
+  getPanelClicked(evt) {
+    this.props.handleCollapsable(evt.currentTarget.id)
+  }
+
   render() {
     return (
-      <section className="design wrapper">
+      <section onClick={this.getPanelClicked} id="panel-1" className={`design wrapper ${this.props.activePanel === 'panel-1' ? "active" : ""}`}>
         <div className="design__section js-coll">
           <div className="desgin__section--box">
             <i className="far fa-clone"></i>
