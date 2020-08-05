@@ -1,10 +1,5 @@
 import React from 'react';
-
-// import "../stylesheets/_app.scss";
-
-// import "../stylesheets/layout/_page.scss";
 import Footer from '../Footer';
-// import Landing from "./Landing/Landing";
 import Header from '../Header';
 import CardPreview from './CardPreview';
 import FormDesign from './FormDesign';
@@ -39,6 +34,29 @@ class MainPage extends React.Component {
     this.getCardData = this.getCardData.bind(this);
     this.setURL = this.setURL.bind(this);
     this.resetForm = this.resetForm.bind(this);
+  }
+
+  componentDidMount() {
+    const localUserInfo = JSON.parse(localStorage.getItem('localData'));
+    if (localUserInfo !== null) {
+      this.setState({
+        userInfo: {
+          palette: localUserInfo.palette,
+          name: localUserInfo.name,
+          job: localUserInfo.job,
+          photo: localUserInfo.photo,
+          phone: localUserInfo.phone,
+          email: localUserInfo.email,
+          linkedin: localUserInfo.linkedin,
+          github: localUserInfo.github,
+        },
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const json = JSON.stringify(this.state.userInfo);
+    localStorage.setItem('localData', json);
   }
 
   handleInputValue(inputName, inputValue) {

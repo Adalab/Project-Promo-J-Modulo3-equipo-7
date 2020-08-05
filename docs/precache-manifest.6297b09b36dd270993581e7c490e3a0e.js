@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "90aa1f7e177b83a1a403c9c6008b3924",
+    "revision": "a001b002378e135538ed13197dfee642",
     "url": "./index.html"
   },
   {
-    "revision": "3a260182974df01c0fde",
-    "url": "./static/css/main.963266a9.chunk.css"
+    "revision": "6a5b82d8f0687ab13296",
+    "url": "./static/css/main.704c78eb.chunk.css"
   },
   {
-    "revision": "a6c124c8eddbe9eb5e9b",
-    "url": "./static/js/2.55824ddc.chunk.js"
+    "revision": "d6604bc7d7f986eb067f",
+    "url": "./static/js/2.2b174bf9.chunk.js"
   },
   {
-    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "./static/js/2.55824ddc.chunk.js.LICENSE.txt"
+    "revision": "c64c486544348f10a6d6c716950bc223",
+    "url": "./static/js/2.2b174bf9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3a260182974df01c0fde",
-    "url": "./static/js/main.1786e526.chunk.js"
+    "revision": "6a5b82d8f0687ab13296",
+    "url": "./static/js/main.0e5d48d9.chunk.js"
   },
   {
     "revision": "5a6c26ab9c21e9660958",
     "url": "./static/js/runtime-main.d4720b12.js"
+  },
+  {
+    "revision": "247915655794cf4e804c391023d68950",
+    "url": "./static/media/futuramasdelcode.24791565.png"
   },
   {
     "revision": "0118e311c7fc2f113bee1abedecf92b2",
