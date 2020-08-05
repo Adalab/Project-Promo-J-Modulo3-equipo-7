@@ -1,20 +1,34 @@
-import React from "react";
+import React from 'react';
 
-import "../../stylesheets/layout/_formShare.scss";
+import '../../stylesheets/layout/_formShare.scss';
 class FormShare extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      active: false,
+    };
     this.getClick = this.getClick.bind(this);
+    this.getPanelClicked = this.getPanelClicked.bind(this);
   }
 
   getClick(event) {
     event.preventDefault();
     this.props.clickHandler(event.target);
+    this.setState({ active: true });
+  }
+
+  getPanelClicked(evt) {
+    this.props.handleCollapsable(evt.currentTarget.id);
   }
 
   render() {
+    const openShare = this.state.active !== true ? 'content' : '';
     return (
-      <section className="share wrapper">
+      <section
+        onClick={this.getPanelClicked}
+        id="panel-3"
+        className="share wrapper"
+      >
         <div className="share__tab js-coll">
           <div className="share__tab--description">
             <i className="fas fa-share-alt tab__image"></i>
@@ -22,7 +36,11 @@ class FormShare extends React.Component {
           </div>
           <i className="fas fa-chevron-down tab__icon"></i>
         </div>
-        <div className="js-collapsable">
+        <div
+          className={`js-collapsable ${
+            this.props.activePanel !== 'panel-3' ? 'content' : ''
+          }`}
+        >
           <div className="createcard__button--container">
             <button
               type="submit"
@@ -34,12 +52,17 @@ class FormShare extends React.Component {
               </div>
               <span className="createcard__button--icon">Crear tarjeta</span>
             </button>
-            <section className="notification wrapper content js-share__section">
+            <section
+              className={`notification wrapper js-share__section ${openShare}`}
+            >
               <p>La tarjeta ha sido creada:</p>
               {/*he creado un link en lugar de un p para que pueda pinchar en el link recibe por props la url que le llega desde la API */}
-              <a target="_blank" className="response__url js-apiLink"
-                href={this.props.cardLink}>
-                  {this.props.cardLink}
+              <a
+                target="_blank"
+                className="response__url js-apiLink"
+                href={this.props.cardLink}
+              >
+                {this.props.cardLink}
               </a>
               <a className="share__button js-share__button">
                 <div className="share__button">

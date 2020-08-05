@@ -30,14 +30,18 @@ class FormDesign extends React.Component {
   //la función que recogerá el id del panel sobre el que he hecho click
   //y se lo manda al padre para que setee el estado de activePanel
   getPanelClicked(evt) {
-    this.props.handleCollapsable(evt.currentTarget.id)
+    this.props.handleCollapsable(evt.currentTarget.id);
   }
 
   render() {
     return (
-      <section onClick={this.getPanelClicked} id="panel-1" className={`design wrapper ${this.props.activePanel === 'panel-1' ? "active" : ""}`}>
+      <section className="design wrapper">
         <div className="design__section js-coll">
-          <div className="desgin__section--box">
+          <div
+            onClick={this.getPanelClicked}
+            id="panel-1"
+            className="desgin__section--box"
+          >
             <i className="far fa-clone"></i>
             <h2 className="design__section--title">Diseña</h2>
           </div>
@@ -49,7 +53,11 @@ class FormDesign extends React.Component {
             <i className="fas fa-chevron-down design__section--img"></i>
           </a>
         </div>
-        <div className="designform js-collapsable">
+        <div
+          className={`designform js-collapsable ${
+            this.props.activePanel === 'panel-1' ? 'content' : ''
+          }`}
+        >
           <fieldset>
             <div className="designform__palette">
               <div className="designform__colors">

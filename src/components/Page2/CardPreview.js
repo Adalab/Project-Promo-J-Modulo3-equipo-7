@@ -24,7 +24,6 @@ class CardPreview extends React.Component {
         ? this.props.photoPreview
         : defaultAvatarPlaceholder;
 
-
     return (
       <section className="cardPreview">
         <div>

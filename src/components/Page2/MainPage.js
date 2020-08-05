@@ -86,7 +86,11 @@ class MainPage extends React.Component {
   //creo el método que controla los colapsables
   handleCollapsable(targetedCollapsableId) {
     console.log(targetedCollapsableId);
-    this.setState({ activePanel: targetedCollapsableId });
+    if (targetedCollapsableId !== this.state.activePanel) {
+      this.setState({ activePanel: targetedCollapsableId });
+    } else {
+      this.setState({ activePanel: '' });
+    }
   }
 
   render() {
@@ -123,11 +127,15 @@ class MainPage extends React.Component {
               photoPreview={this.state.userInfo.photo}
               inputValue={this.handleInputValue}
               updateAvatar={this.updateAvatar}
+              handleCollapsable={this.handleCollapsable}
+              activePanel={this.state.activePanel}
             />
             <FormShare
               clickHandler={this.getCardData}
               //le paso por props a FormShare la URL que me genera la API
               cardLink={this.state.cardURL}
+              handleCollapsable={this.handleCollapsable}
+              activePanel={this.state.activePanel}
             />
           </form>
         </main>

@@ -10,6 +10,7 @@ class FormFill extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.loadProfileImage = this.loadProfileImage.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.getPanelClicked = this.getPanelClicked.bind(this);
   }
 
   handleFile() {
@@ -27,9 +28,17 @@ class FormFill extends React.Component {
     this.props.updateAvatar(image);
   }
 
+  getPanelClicked(evt) {
+    this.props.handleCollapsable(evt.currentTarget.id);
+  }
+
   render() {
     return (
-      <section className="fill wrapper">
+      <section
+        onClick={this.getPanelClicked}
+        id="panel-2"
+        className="fill wrapper"
+      >
         <div className="fill__section js-coll">
           <div className="fill__section--box">
             <i
@@ -40,7 +49,11 @@ class FormFill extends React.Component {
           </div>
           <i className="fas fa-chevron-down fill__section--img2"></i>
         </div>
-        <div className="form content js-contentFill js-collapsable">
+        <div
+          className={`form js-contentFill js-collapsable ${
+            this.props.activePanel !== 'panel-2' ? 'content' : ''
+          }`}
+        >
           <fieldset>
             <FormItem
               name={'name'}
