@@ -1,6 +1,7 @@
 import React from 'react';
-
 import '../../stylesheets/layout/_cardPreview.scss';
+import defaultAvatarPlaceholder from '../../images/profile-image.jpg';
+
 class CardPreview extends React.Component {
   render() {
     const isEmail = this.props.email ? '' : 'hidden-icon';
@@ -17,6 +18,11 @@ class CardPreview extends React.Component {
         : parseInt(this.props.colorPalette) === 4
         ? '4'
         : '5';
+
+    const backgroundPreviewImage =
+      this.props.photoPreview !== ''
+        ? this.props.photoPreview
+        : defaultAvatarPlaceholder;
     return (
       <section className="cardPreview">
         <div>
@@ -37,9 +43,10 @@ class CardPreview extends React.Component {
                 {this.props.job === '' ? 'Front End Developer' : this.props.job}
               </h2>
             </div>
-            <div className="cardPreview__profileImage js__profile-image">
-              <img alt="" />
-            </div>
+            <div
+              className="cardPreview__profileImage js__profile-image"
+              style={{ backgroundImage: `url(${backgroundPreviewImage})` }}
+            ></div>
             <div
               className={`cardPreview__socialMedia js-icon-container js_palette${numberPalette}_border_color`}
             >

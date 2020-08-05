@@ -1,8 +1,8 @@
-@import "../core/variables";
-@import "../core/mixins";
+@import '../core/variables';
+@import '../core/mixins';
 
 .fill {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: $color-dark-green;
   border-bottom: 1px solid $white-two;
   cursor: pointer;
@@ -81,6 +81,11 @@
         height: 30px;
         width: 30px;
         border: 0.5px solid $orange;
+
+        & img {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }

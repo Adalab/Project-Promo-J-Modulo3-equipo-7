@@ -50,7 +50,7 @@ class App extends React.Component {
     this.setState(
       (prevState) => {
         const newUserInfo = { ...this.state.userInfo, photo: image };
-        return newUserInfo;
+        return { userInfo: newUserInfo };
       },
       () => {
         console.log(this.state.userInfo);
@@ -71,6 +71,7 @@ class App extends React.Component {
             linkedin={this.state.userInfo.linkedin}
             github={this.state.userInfo.github}
             colorPalette={this.state.userInfo.palette}
+            photoPreview={this.state.userInfo.photo}
           />
           <form className="form__section js-form">
             <FormDesign
@@ -84,6 +85,7 @@ class App extends React.Component {
               email={this.state.userInfo.email}
               linkedin={this.state.userInfo.linkedin}
               github={this.state.userInfo.github}
+              photoPreview={this.state.userInfo.photo}
               inputValue={this.handleInputValue}
               updateAvatar={this.updateAvatar}
             />

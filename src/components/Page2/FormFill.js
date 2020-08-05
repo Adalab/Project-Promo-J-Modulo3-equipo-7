@@ -74,7 +74,13 @@ class FormFill extends React.Component {
                   type="file"
                   name="photo"
                 />
-                <div className="form__img--box--preview profile__preview js__profile-preview"></div>
+                <div className="form__img--box--preview profile__preview js__profile-preview">
+                  {this.props.photoPreview !== '' ? (
+                    <img src={this.props.photoPreview} alt="Profile Avatar" />
+                  ) : (
+                    ''
+                  )}
+                </div>
               </div>
             </div>
           </fieldset>
