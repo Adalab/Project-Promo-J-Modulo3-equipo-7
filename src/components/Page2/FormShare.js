@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import '../../stylesheets/layout/_formShare.scss';
+import "../../stylesheets/layout/_formShare.scss";
 class FormShare extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +22,7 @@ class FormShare extends React.Component {
   }
 
   render() {
-    const openShare = this.state.active !== true ? 'content' : '';
+    const openShare = this.state.active !== true ? "content" : "";
     return (
       <section className="share wrapper">
         <div className="share__tab js-coll">
@@ -38,7 +38,7 @@ class FormShare extends React.Component {
         </div>
         <div
           className={`js-collapsable ${
-            this.props.activePanel !== 'panel-3' ? 'content' : ''
+            this.props.activePanel !== "panel-3" ? "content" : ""
           }`}
         >
           <div className="createcard__button--container">
@@ -58,13 +58,19 @@ class FormShare extends React.Component {
               <p>La tarjeta ha sido creada:</p>
               {/*he creado un link en lugar de un p para que pueda pinchar en el link recibe por props la url que le llega desde la API */}
               <a
+                rel="noopener noreferrer"
                 target="_blank"
                 className="response__url js-apiLink"
                 href={this.props.cardLink}
               >
                 {this.props.cardLink}
               </a>
-              <a className="share__button js-share__button">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href={`https://twitter.com/intent/tweet?text=Hello%20world ${this.props.cardLink}`}
+                className="share__button js-share__button"
+              >
                 <div className="share__button">
                   <div className="share__button--icon">
                     <i className="fab fa-twitter share__icon"></i>
