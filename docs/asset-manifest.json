@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "./static/css/main.704c78eb.chunk.css",
-    "main.js": "./static/js/main.0e5d48d9.chunk.js",
-    "main.js.map": "./static/js/main.0e5d48d9.chunk.js.map",
+    "main.css": "./static/css/main.1370f9c5.chunk.css",
+    "main.js": "./static/js/main.aab05887.chunk.js",
+    "main.js.map": "./static/js/main.aab05887.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.d4720b12.js",
     "runtime-main.js.map": "./static/js/runtime-main.d4720b12.js.map",
-    "static/js/2.2b174bf9.chunk.js": "./static/js/2.2b174bf9.chunk.js",
-    "static/js/2.2b174bf9.chunk.js.map": "./static/js/2.2b174bf9.chunk.js.map",
+    "static/js/2.15b1cc0e.chunk.js": "./static/js/2.15b1cc0e.chunk.js",
+    "static/js/2.15b1cc0e.chunk.js.map": "./static/js/2.15b1cc0e.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.6297b09b36dd270993581e7c490e3a0e.js": "./precache-manifest.6297b09b36dd270993581e7c490e3a0e.js",
+    "precache-manifest.7afacf56a136fbb2ccdb6f371ffb06f4.js": "./precache-manifest.7afacf56a136fbb2ccdb6f371ffb06f4.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.704c78eb.chunk.css.map": "./static/css/main.704c78eb.chunk.css.map",
-    "static/js/2.2b174bf9.chunk.js.LICENSE.txt": "./static/js/2.2b174bf9.chunk.js.LICENSE.txt",
-    "static/media/futuramasdelcode.png": "./static/media/futuramasdelcode.24791565.png",
+    "static/css/main.1370f9c5.chunk.css.map": "./static/css/main.1370f9c5.chunk.css.map",
+    "static/js/2.15b1cc0e.chunk.js.LICENSE.txt": "./static/js/2.15b1cc0e.chunk.js.LICENSE.txt",
+    "static/media/amazona2_muerte-por-react.png": "./static/media/amazona2_muerte-por-react.0df04dc5.png",
+    "static/media/amazonaok.png": "./static/media/amazonaok.743f866d.png",
     "static/media/logo-awesome-profile-cards.svg": "./static/media/logo-awesome-profile-cards.0118e311.svg",
-    "static/media/logo_futuramas.png": "./static/media/logo_futuramas.ee467a1e.png",
     "static/media/_cardPreview.scss": "./static/media/profile-image.a209326f.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d4720b12.js",
-    "static/js/2.2b174bf9.chunk.js",
-    "static/css/main.704c78eb.chunk.css",
-    "static/js/main.0e5d48d9.chunk.js"
+    "static/js/2.15b1cc0e.chunk.js",
+    "static/css/main.1370f9c5.chunk.css",
+    "static/js/main.aab05887.chunk.js"
   ]
 }
