@@ -6,20 +6,42 @@ import "../../stylesheets/layout/_formDesign.scss";
 const NUMBER_OF_PALLETES = 5;
 
 class FormDesign extends React.Component {
+  constructor(props) {
+    super(props);
+    this.getPanelClicked = this.getPanelClicked.bind(this);
+  }
+
   getPalettes(numberOfPalletes) {
     let palettes = [];
     for (let index = 1; index <= numberOfPalletes; index++) {
-      palettes.push(<Palette number={index} />);
+      palettes.push(
+        <Palette
+          number={index}
+          key={index}
+          handleInputValue={this.props.handleInputValue}
+          checked={parseInt(this.props.checked) === index ? true : false} //se recibia el palette index como string, solo necesitaba el parseInt
+        />
+      );
     }
 
     return palettes;
+  }
+
+  //la función que recogerá el id del panel sobre el que he hecho click
+  //y se lo manda al padre para que setee el estado de activePanel
+  getPanelClicked(evt) {
+    this.props.handleCollapsable(evt.currentTarget.id);
   }
 
   render() {
     return (
       <section className="design wrapper">
         <div className="design__section js-coll">
-          <div className="desgin__section--box">
+          <div
+            onClick={this.getPanelClicked}
+            id="panel-1"
+            className="desgin__section--box"
+          >
             <i className="far fa-clone"></i>
             <h2 className="design__section--title">Diseña</h2>
           </div>
@@ -31,7 +53,11 @@ class FormDesign extends React.Component {
             <i className="fas fa-chevron-down design__section--img"></i>
           </a>
         </div>
-        <div className="designform js-collapsable">
+        <div
+          className={`designform js-collapsable ${
+            this.props.activePanel === 'panel-1' ? 'content' : ''
+          }`}
+        >
           <fieldset>
             <div className="designform__palette">
               <div className="designform__colors">
