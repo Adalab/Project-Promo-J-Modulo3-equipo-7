@@ -11,6 +11,7 @@
   justify-content: flex-end;
   align-items: center;
   padding-bottom: 59px;
+  position: relative;
   @include tablet {
     height: 90vh;
     padding-top: 30px;
@@ -129,5 +130,16 @@
   cursor: pointer;
   @include tablet {
     margin-top: 60px;
+  }
+}
+
+.img-main-hero-LogoMuertePorReact {
+  display: none;
+  @include tablet {
+    display: inline-block;
+    width: 350px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
   }
 }

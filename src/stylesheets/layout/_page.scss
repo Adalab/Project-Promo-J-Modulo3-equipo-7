@@ -1,3 +1,5 @@
+@import "../core/mixins";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -75,4 +77,16 @@ fieldset {
 //HIDE ICONS
 .hidden-icon {
   display: none !important;
+}
+
+.img-main-hero-LogoMuertePorReact {
+  display: none;
+  @include tablet {
+    display: inline-block;
+    width: 350px;
+    position: absolute;
+    // bottom: 10vh;
+    right: 20px;
+    top: 0;
+  }
 }

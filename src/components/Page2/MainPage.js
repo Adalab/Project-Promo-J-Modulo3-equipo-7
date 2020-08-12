@@ -1,31 +1,32 @@
-import React from 'react';
-import Footer from '../Footer';
-import Header from '../Header';
-import CardPreview from './CardPreview';
-import FormDesign from './FormDesign';
-import FormFill from './FormFill';
-import FormShare from './FormShare';
-import { cardSearch } from '../../services/CardSearch';
+import React from "react";
+import Footer from "../Footer";
+import Header from "../Header";
+import CardPreview from "./CardPreview";
+import FormDesign from "./FormDesign";
+import FormFill from "./FormFill";
+import FormShare from "./FormShare";
+import { cardSearch } from "../../services/CardSearch";
+import LogoMuertePorReact from "../../images/amazona2_muerte-por-react.svg";
 
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       userInfo: {
-        palette: '',
-        name: '',
-        job: '',
-        photo: '',
-        phone: '',
-        email: '',
-        linkedin: '',
-        github: '',
+        palette: "",
+        name: "",
+        job: "",
+        photo: "",
+        phone: "",
+        email: "",
+        linkedin: "",
+        github: "",
       },
       //creo la propiedad del estado que almacenará la URL generada
       cardURL:
-        'En este momento el link no está disponible. Por favor, revisa los campos del formulario arriba indicados 🤖',
+        "En este momento el link no está disponible. Por favor, revisa los campos del formulario arriba indicados 🤖",
       //creo una propiedad para ver en todo momento que panel está activo
-      activePanel: 'no-active',
+      activePanel: "no-active",
     };
     this.handleInputValue = this.handleInputValue.bind(this);
     //bindeo el método que maneja los colapsables
@@ -37,7 +38,7 @@ class MainPage extends React.Component {
   }
 
   componentDidMount() {
-    const localUserInfo = JSON.parse(localStorage.getItem('localData'));
+    const localUserInfo = JSON.parse(localStorage.getItem("localData"));
     if (localUserInfo !== null) {
       this.setState({
         userInfo: {
@@ -56,7 +57,7 @@ class MainPage extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const json = JSON.stringify(this.state.userInfo);
-    localStorage.setItem('localData', json);
+    localStorage.setItem("localData", json);
   }
 
   handleInputValue(inputName, inputValue) {
@@ -90,17 +91,17 @@ class MainPage extends React.Component {
   resetForm() {
     this.setState({
       userInfo: {
-        palette: '',
-        name: '',
-        job: '',
-        photo: '',
-        phone: '',
-        email: '',
-        linkedin: '',
-        github: '',
+        palette: "",
+        name: "",
+        job: "",
+        photo: "",
+        phone: "",
+        email: "",
+        linkedin: "",
+        github: "",
       },
       cardURL:
-        'En este momento el link no está disponible. Por favor, revisa los campos del formulario arriba indicados 🤖',
+        "En este momento el link no está disponible. Por favor, revisa los campos del formulario arriba indicados 🤖",
     });
   }
   getCardData() {
@@ -115,7 +116,7 @@ class MainPage extends React.Component {
     if (res.success) {
       this.setState({ cardURL: res.cardURL });
     } else {
-      this.setState({ cardURL: 'error:' + res.error });
+      this.setState({ cardURL: "error:" + res.error });
     }
   }
 
@@ -125,7 +126,7 @@ class MainPage extends React.Component {
     if (targetedCollapsableId !== this.state.activePanel) {
       this.setState({ activePanel: targetedCollapsableId });
     } else {
-      this.setState({ activePanel: '' });
+      this.setState({ activePanel: "" });
     }
   }
 
@@ -175,6 +176,11 @@ class MainPage extends React.Component {
               activePanel={this.state.activePanel}
             />
           </form>
+          <img
+            className="img-main-hero-LogoMuertePorReact"
+            src={LogoMuertePorReact}
+            alt="Logo Muerte por React"
+          ></img>
         </main>
 
         <Footer />

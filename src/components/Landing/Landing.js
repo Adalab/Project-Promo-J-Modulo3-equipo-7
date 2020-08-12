@@ -1,5 +1,6 @@
 import React from "react";
 import LogoCard from "../../images/logo-awesome-profile-cards.svg";
+import LogoMuertePorReact from "../../images/amazona2_muerte-por-react.svg";
 import LogoTeam from "../../images/amazonaok.svg";
 
 import "../../stylesheets/layout/_landing.scss";
@@ -42,6 +43,11 @@ class Landing extends React.Component {
               <Link to="/awesome-profile-card">comenzar </Link>
             </div>
           </a>
+          <img
+            className="img-main-hero-LogoMuertePorReact"
+            src={LogoMuertePorReact}
+            alt="Logo Muerte por React"
+          ></img>
         </main>
         <Footer />
       </div>
