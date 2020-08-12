@@ -137,9 +137,10 @@
   display: none;
   @include tablet {
     display: inline-block;
-    width: 350px;
+    width: 300px;
     position: absolute;
     bottom: 0;
-    right: 20px;
+    right: 15px;
+    top: auto;
   }
 }

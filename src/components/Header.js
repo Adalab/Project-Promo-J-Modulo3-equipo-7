@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../images/amazonaok.svg";
+import Logo from "../images/amazonaok.png";
 import LogoCard from "../images/logo-awesome-profile-cards.svg";
 import "../stylesheets/layout/_header.scss";
 import { Link } from "react-router-dom";

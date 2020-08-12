@@ -6,7 +6,7 @@ import FormDesign from "./FormDesign";
 import FormFill from "./FormFill";
 import FormShare from "./FormShare";
 import { cardSearch } from "../../services/CardSearch";
-import LogoMuertePorReact from "../../images/amazona2_muerte-por-react.svg";
+import LogoMuertePorReact from "../../images/amazona2_muerte-por-react.png";
 
 class MainPage extends React.Component {
   constructor(props) {

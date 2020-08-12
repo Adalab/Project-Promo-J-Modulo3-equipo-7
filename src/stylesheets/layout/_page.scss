@@ -83,10 +83,10 @@ fieldset {
   display: none;
   @include tablet {
     display: inline-block;
-    width: 350px;
+    width: 300px;
     position: absolute;
-    // bottom: 10vh;
-    right: 20px;
-    top: 0;
+    bottom: 0;
+    right: 15px;
+    top: auto;
   }
 }

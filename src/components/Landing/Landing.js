@@ -1,7 +1,7 @@
 import React from "react";
 import LogoCard from "../../images/logo-awesome-profile-cards.svg";
-import LogoMuertePorReact from "../../images/amazona2_muerte-por-react.svg";
-import LogoTeam from "../../images/amazonaok.svg";
+import LogoMuertePorReact from "../../images/amazona2_muerte-por-react.png";
+import LogoTeam from "../../images/amazonaok.png";
 
 import "../../stylesheets/layout/_landing.scss";
 import { Link } from "react-router-dom";
