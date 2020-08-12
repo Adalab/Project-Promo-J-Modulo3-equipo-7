@@ -1,7 +1,7 @@
-import React from 'react';
-import Palette from './Palette';
+import React from "react";
+import Palette from "./Palette";
 
-import '../../stylesheets/layout/_formDesign.scss';
+import "../../stylesheets/layout/_formDesign.scss";
 
 const NUMBER_OF_PALLETES = 5;
 
@@ -35,7 +35,7 @@ class FormDesign extends React.Component {
           <fieldset>
             <div className="designform__palette">
               <div className="designform__colors">
-                <label for="name">Colores</label>
+                <label htmlFor="name">Colores</label>
               </div>
 
               {this.getPalettes(NUMBER_OF_PALLETES)}

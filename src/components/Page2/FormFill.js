@@ -21,7 +21,7 @@ class FormFill extends React.Component {
             <FormItem name={'name'} title={'Nombre completo'} placeholder={'Ej: Leela Turanga'}/>
             <FormItem name={'job'} title={'Puesto'} placeholder={'Ej: Front End developer'}/>
             <div className="form__img">
-              <label for="img">Imagen de perfil</label>
+              <label htmlFor="img">Imagen de perfil</label>
               <div className="form__img--box">
                 <buttonxfbi
                   className="form__img--box--button js__profile-trigger"
